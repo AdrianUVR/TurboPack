@@ -1,0 +1,51 @@
+﻿@model TurboPack.Models.Turbo
+@{
+    ViewData["Title"] = "TurboGet";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>TurboGet</h1>
+
+@if (Model.Turbos != null)
+{
+    //tabla
+    <table class="table table-bordered table-responsive">
+        <thead>
+            <tr>
+               
+
+                
+                <td class="text-center" style=" font-weight:bold;">Nombre</td>
+                <td class="text-center" style=" font-weight:bold;">Cuidad</td>
+                <td class="text-center" style=" font-weight:bold;">Correo</td>
+                <td class="text-center" style=" font-weight:bold;">sexo</td>
+
+
+
+               
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (TurboPack.Models.Turbo turbo in Model.Turbos)
+            {
+                <tr>
+
+
+                    <td>@turbo.Nombre</td>
+                    <td>@turbo.Ciudad</td>
+                    <td>@turbo.Correo</td>
+                    <td>@turbo.sexo</td>
+
+                
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+}
+else
+{
+    <div class="alert alert-danger" role="alert">Ocurrio un error al realizar la consulta </div>
+}
